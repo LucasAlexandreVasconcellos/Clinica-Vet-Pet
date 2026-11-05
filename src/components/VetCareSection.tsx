@@ -1,5 +1,6 @@
 import React from 'react';
 import { Stethoscope, Syringe, Activity, Sparkles, Shield, AlertCircle, ArrowUpRight } from 'lucide-react';
+import vetCatImg from '../assets/images/vet_care_cat_1793889674443.jpg';
 
 interface VetCareSectionProps {
   onSelectService: (serviceId: string) => void;
@@ -82,10 +83,13 @@ export const VetCareSection: React.FC<VetCareSectionProps> = ({ onSelectService,
           <div className="lg:col-span-5 rounded-2xl bg-white border border-stone-200/80 overflow-hidden flex flex-col justify-between shadow-xs">
             <div className="relative aspect-4/3 overflow-hidden bg-stone-100">
               <img
-                src="/src/assets/images/vet_care_cat_1793889674443.jpg"
+                src={vetCatImg}
                 alt="Veterinária atenta examinando um gato saudável com estetoscópio em ambiente calmo"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover hover:scale-102 transition-transform duration-500"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = '/images/vet_care_cat.jpg';
+                }}
               />
               <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-md text-[11px] font-semibold text-emerald-900">
                 Consulta Felina Sem Estresse

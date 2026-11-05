@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Sparkles, Scissors, Droplets, Wind, ShieldCheck, Heart, ArrowRight } from 'lucide-react';
+import groomingImg from '../assets/images/grooming_bath_tosa_1793889674260.jpg';
+import happyPetImg from '../assets/images/happy_pet_showcase_1793889673680.jpg';
 
 interface GroomingSectionProps {
   onSelectGrooming: (serviceId: string) => void;
@@ -68,10 +70,13 @@ export const GroomingSection: React.FC<GroomingSectionProps> = ({ onSelectGroomi
           <div className="lg:col-span-6 grid grid-cols-2 gap-4">
             <div className="relative rounded-2xl overflow-hidden border border-stone-200/80 shadow-xs aspect-4/5 group">
               <img
-                src="/src/assets/images/grooming_bath_tosa_1793889674260.jpg"
+                src={groomingImg}
                 alt="Profissional da estética animal banhando e secando um cão com toalhas macias em cuba limpa"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = '/images/grooming_bath_tosa.jpg';
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-transparent flex items-end p-4">
                 <span className="text-xs font-semibold text-white">Banho Climatizado com Spa</span>
@@ -80,10 +85,13 @@ export const GroomingSection: React.FC<GroomingSectionProps> = ({ onSelectGroomi
 
             <div className="relative rounded-2xl overflow-hidden border border-stone-200/80 shadow-xs aspect-4/5 group">
               <img
-                src="/src/assets/images/happy_pet_showcase_1793889673680.jpg"
+                src={happyPetImg}
                 alt="Cão alegre com pelo tosado, macio e brilhante após finalização no centro de banho e tosa"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = '/images/happy_pet_showcase.jpg';
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-transparent flex items-end p-4">
                 <span className="text-xs font-semibold text-white">Pelagem Sedosa & Hidratada</span>

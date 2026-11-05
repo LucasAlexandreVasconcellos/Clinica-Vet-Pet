@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Calendar, ArrowRight, ShieldCheck, Sparkles, MapPin, CheckCircle2 } from 'lucide-react';
+import heroVetImg from '../assets/images/hero_vet_clinic_1793889672977.jpg';
 
 interface HeroProps {
   onOpenBooking: () => void;
@@ -96,13 +97,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onNavigateToSimulator
 
               <div className="relative overflow-hidden rounded-2xl border border-stone-200/80 bg-stone-100 shadow-sm aspect-16/10 sm:aspect-4/3 lg:aspect-4/3">
                 <img
-                  src="/src/assets/images/hero_vet_clinic_1793889672977.jpg"
+                  src={heroVetImg}
                   alt="Veterinária atenciosa da Clínica Vet & Pet examinando um golden retriever alegre em consultório moderno e iluminado em Brasília"
                   referrerPolicy="no-referrer"
                   className={`w-full h-full object-cover transition-opacity duration-300 ${
                     imageLoaded ? 'opacity-100' : 'opacity-90'
                   }`}
                   onLoad={() => setImageLoaded(true)}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = '/images/hero_vet_clinic.jpg';
+                  }}
                 />
 
                 {/* Quiet unobtrusive floating badge on visual */}

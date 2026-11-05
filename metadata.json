@@ -1,0 +1,6 @@
+{
+  "name": "Clínica Vet & Pet - Saúde Animal, Banho e Tosa",
+  "description": "Landing page moderna e fluida para a Clínica Vet & Pet em Brasília (Asa Norte). Consultas veterinárias, exames, vacinas e centro estético completo de banho e tosa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
